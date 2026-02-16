@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/Button";
@@ -19,11 +19,17 @@ export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
 
   // Handle scroll effect
-  if (typeof window !== "undefined") {
-    window.addEventListener("scroll", () => {
+  useEffect(() => {
+    const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
-    });
-  }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    // Check initial scroll position
+    handleScroll();
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <header

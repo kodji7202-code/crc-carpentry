@@ -2,6 +2,28 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  /* Brand Colors from Logo */
+  --color-primary: #D5B054;
+  --color-primary-dark: #B8923F;
+  --color-primary-light: #E8C97A;
+  --color-secondary: #2F210B;
+  --color-secondary-light: #4A3720;
+  
+  /* Background Colors */
+  --color-bg-primary: #FFFFFF;
+  --color-bg-secondary: #F8F8F8;
+  --color-bg-alt: #F0F0F0;
+  
+  /* Text Colors */
+  --color-text-primary: #1A1A1A;
+  --color-text-secondary: #666666;
+  --color-text-muted: #888888;
+  
+  /* Accent */
+  --color-accent: #D5B054;
+}
+
 @layer base {
   html {
     @apply scroll-smooth;

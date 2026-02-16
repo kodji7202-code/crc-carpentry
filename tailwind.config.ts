@@ -9,21 +9,21 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // CRC Gold theme colors
+        // CRC Gold theme colors (from logo)
         gold: {
           50: "#faf8f2",
           100: "#f3edd9",
           200: "#e6d9b3",
           300: "#d9c28a",
           400: "#ccab63",
-          500: "#c4943c", // Primary gold
-          600: "#b37d2f",
+          500: "#D5B054", // Primary gold from logo
+          600: "#B8923F", // Primary dark
           700: "#946326",
           800: "#754d1f",
           900: "#5c3c19",
           950: "#3f2710",
         },
-        // CRC Black/Dark theme colors
+        // CRC Dark theme colors (from logo)
         dark: {
           50: "#f6f6f6",
           100: "#e7e7e7",
@@ -34,17 +34,29 @@ const config: Config = {
           600: "#6f6f6f",
           700: "#575757",
           800: "#3f3f3f",
-          900: "#272727",
+          900: "#2F210B", // Secondary dark from logo
           950: "#1a1a1a",
         },
-        // Brand colors - primary gold
+        // Brand colors - primary gold (from logo)
         primary: {
-          DEFAULT: "#c4943c",
-          dark: "#946326",
-          light: "#d9c28a",
+          DEFAULT: "#D5B054",
+          dark: "#B8923F",
+          light: "#E8C97A",
+          50: "#faf8f2",
+          100: "#f3edd9",
+          200: "#e6d9b3",
+          300: "#d9c28a",
+          400: "#ccab63",
+          500: "#D5B054",
+          600: "#B8923F",
+          700: "#946326",
+          800: "#754d1f",
+          900: "#5c3c19",
         },
-        // Brand colors - secondary dark
+        // Brand colors - secondary dark (from logo)
         secondary: {
+          DEFAULT: "#2F210B",
+          light: "#4A3720",
           50: "#f6f6f6",
           100: "#e7e7e7",
           200: "#cfcfcf",
@@ -54,12 +66,25 @@ const config: Config = {
           600: "#6f6f6f",
           700: "#575757",
           800: "#3f3f3f",
-          900: "#272727",
+          900: "#2F210B",
           950: "#1a1a1a",
+        },
+        // Background colors
+        background: {
+          primary: "#FFFFFF",
+          secondary: "#F8F8F8",
+          alt: "#F0F0F0",
+        },
+        // Text colors
+        text: {
+          primary: "#1A1A1A",
+          secondary: "#666666",
+          muted: "#888888",
         },
       },
       fontFamily: {
-        sans: ["var(--font-inter)", "system-ui", "sans-serif"],
+        sans: ["var(--font-dm-sans)", "system-ui", "sans-serif"],
+        serif: ["var(--font-playfair)", "Georgia", "serif"],
       },
       container: {
         center: true,

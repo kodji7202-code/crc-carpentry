@@ -2,3 +2,6 @@ export { Button } from "./Button";
 export { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from "./Card";
 export { Container } from "./Container";
 export { SectionWrapper } from "./SectionWrapper";
+export { SectionTitle } from "./SectionTitle";
+export { TestimonialCard } from "./TestimonialCard";
+export { ProjectCard } from "./ProjectCard";
