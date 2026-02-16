@@ -16,7 +16,7 @@ const quickLinks = [
 ];
 
 const contact = {
-  phone: "07725 343916",
+  phone: "07588 019692",
   email: "info@crc-carpentry.co.uk",
   address: "Milton Keynes, Buckinghamshire, UK",
 };

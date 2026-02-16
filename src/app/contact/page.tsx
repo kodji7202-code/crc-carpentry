@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 };
 
 const contactInfo = {
-  phone: "07725 343916",
+  phone: "07588 019692",
   email: "info@crc-carpentry.co.uk",
   address: "Milton Keynes, Buckinghamshire, UK",
   hours: "Mon - Fri: 8:00 AM - 6:00 PM\nSat: 9:00 AM - 2:00 PM\nSun: Closed",
@@ -83,7 +83,7 @@ export default function ContactPage() {
                         id="phone"
                         name="phone"
                         className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-primary focus:border-transparent"
-                        placeholder="07725 343916"
+                        placeholder="07588 019692"
                       />
                     </div>
 
