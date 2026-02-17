@@ -38,12 +38,22 @@ const galleryItems = [
 
 export default function Gallery() {
   return (
-    <section className="py-16 md:py-24 bg-white" id="projects">
-      <Container>
+    <section className="py-16 md:py-24 relative overflow-hidden" id="projects">
+      {/* Premium Background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-[#F8F9FA] via-[#FEFEFE] to-[#F5F3EF]" />
+      
+      {/* Subtle dot pattern */}
+      <div className="absolute inset-0 opacity-[0.03]" 
+        style={{
+          backgroundImage: `url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='20' cy='20' r='1' fill='%23333'/%3E%3C/svg%3E")`,
+        }}
+      />
+      
+      <Container className="relative z-10">
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-12">
           <div className="max-w-2xl">
-            <span className="inline-block text-primary font-medium text-sm mb-3">Our Portfolio</span>
+            <span className="inline-block text-primary font-semibold text-sm tracking-wider uppercase mb-3">Our Portfolio</span>
             <h2 className="text-3xl md:text-4xl font-bold text-secondary-900 mb-4">
               Our Latest Projects
             </h2>
@@ -54,34 +64,35 @@ export default function Gallery() {
           </div>
           <Link
             href="/projects"
-            className="inline-flex items-center text-primary font-medium hover:text-primary-dark transition-colors"
+            className="group inline-flex items-center text-primary font-semibold text-lg hover:text-primary-dark transition-all duration-300"
           >
             View All Projects
-            <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg className="w-5 h-5 ml-2 transform group-hover:translate-x-2 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
             </svg>
           </Link>
         </div>
 
-        {/* Gallery Grid */}
-        <div className="grid md:grid-cols-2 gap-6">
+        {/* Gallery Grid - Horizontal scroll on mobile */}
+        <div className="flex md:grid md:grid-cols-2 gap-6 md:gap-8 overflow-x-auto md:overflow-visible pb-4 md:pb-0 scrollbar-hide -mx-4 px-4 md:mx-0 md:px-0">
           {galleryItems.map((item, index) => (
             <Link
               key={item.id}
               href={item.href}
-              className="group relative aspect-[4/3] rounded-xl overflow-hidden bg-gray-100 cursor-pointer animate-fade-in-up block"
+              className="group relative aspect-[4/3] rounded-xl overflow-hidden bg-gray-100 cursor-pointer animate-fade-in-up block flex-shrink-0 w-[85vw] md:w-auto"
               style={{ animationDelay: `${index * 0.15}s`, opacity: 0 }}
             >
-              {/* Image */}
+              {/* Image with zoom effect */}
               <div
                 className="absolute inset-0 bg-cover bg-center group-hover:scale-105 transition-transform duration-500"
                 style={{ backgroundImage: `url('${item.image}')` }}
               />
               
-              {/* Overlay - Always visible on mobile, hover on desktop */}
+              {/* Overlay - Always visible */}
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent">
                 <div className="absolute bottom-0 left-0 right-0 p-6">
-                  <p className="text-primary text-xs font-medium mb-1 uppercase tracking-wider">{item.category}</p>
+                  {/* Gold badge */}
+                  <p className="inline-block text-xs font-medium mb-2 px-3 py-1 bg-primary/80 backdrop-blur-sm text-white rounded-full uppercase tracking-wider">{item.category}</p>
                   <h3 className="text-white text-xl font-semibold mb-1">{item.title}</h3>
                   <p className="text-gray-300 text-sm flex items-center">
                     <svg className="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -93,8 +104,8 @@ export default function Gallery() {
                 </div>
               </div>
 
-              {/* Hover overlay for extra content */}
-              <div className="absolute inset-0 bg-primary/0 group-hover:bg-primary/20 transition-colors duration-300" />
+              {/* Hover overlay */}
+              <div className="absolute inset-0 bg-primary/0 group-hover:bg-primary/10 transition-colors duration-300" />
             </Link>
           ))}
         </div>
