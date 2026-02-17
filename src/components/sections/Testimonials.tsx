@@ -170,24 +170,52 @@ export default function Testimonials() {
       : currentTestimonial.content.slice(0, MAX_CHARS) + "...";
 
   return (
-    <section id="testimonials" className="py-8 md:py-12 bg-gray-50">
-      <Container>
+    <section id="testimonials" className="py-16 md:py-24 relative overflow-hidden">
+      {/* Premium Wood Background with Heavy Blur and Gold Overlay */}
+      <div className="absolute inset-0">
+        {/* Wood texture background */}
+        <div 
+          className="absolute inset-0 bg-cover bg-center"
+          style={{
+            backgroundImage: "url('https://minimax-algeng-chat-tts-us.oss-us-east-1.aliyuncs.com/ccv2%2F2026-02-17%2FMiniMax-M2.5%2F2022335301715759817%2Faf6701660e393bdb76c6ca8703257c22cc0c38e68ef32a9aeb30a7ab123d81a1..webp?Expires=1771351940&OSSAccessKeyId=LTAI5tCpJNKCf5EkQHSuL9xg&Signature=7HrUsrx9hdMP6UtZlMxBJ3Hu5bc%3D')",
+          }}
+        />
+        {/* Heavy blur for premium effect */}
+        <div className="absolute inset-0 backdrop-blur-3xl" />
+        {/* Semi-transparent gold overlay gradient */}
+        <div className="absolute inset-0 bg-gradient-to-br from-[#D4AF37]/20 via-[#8B6914]/15 to-[#D4AF37]/20" />
+        {/* Dark overlay for contrast */}
+        <div className="absolute inset-0 bg-black/60" />
+      </div>
+      
+      {/* Subtle pattern overlay */}
+      <div className="absolute inset-0 opacity-[0.05]" 
+        style={{
+          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0L60 30L30 60L0 30L30 0z' stroke='%23FFFFFF' fill='none' stroke-width='1'/%3E%3C/svg%3E")`,
+          backgroundSize: '60px 60px'
+        }}
+      />
+
+      <Container className="relative z-10">
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-6">
-          <span className="inline-block text-primary font-medium text-sm mb-2">
+        <div className="text-center max-w-3xl mx-auto mb-12">
+          <span className="inline-block text-primary font-medium text-sm mb-3 tracking-wider uppercase">
             Testimonials
           </span>
-          <h2 className="text-2xl md:text-3xl font-bold text-secondary-900 mb-3">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
             What Our Clients Say
           </h2>
+          <p className="text-gray-300 text-lg">
+            Discover why homeowners across Milton Keynes trust us with their carpentry projects.
+          </p>
         </div>
 
         {/* Carousel - Single Review View */}
-        <div className="relative max-w-2xl mx-auto px-4 md:px-0">
-          {/* Navigation Arrows */}
+        <div className="relative max-w-3xl mx-auto px-4 md:px-0">
+          {/* Navigation Arrows - Gold styled */}
           <button
             onClick={goToPrevious}
-            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-2 md:-translate-x-14 z-10 w-10 h-10 bg-white rounded-full shadow-lg flex items-center justify-center text-secondary-600 hover:text-primary hover:shadow-xl transition-all duration-200"
+            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-2 md:-translate-x-16 z-10 w-12 h-12 bg-white/10 backdrop-blur-lg rounded-full flex items-center justify-center text-white hover:bg-[#D4AF37] hover:text-secondary-900 transition-all duration-300 border border-white/20 hover:border-[#D4AF37]"
             aria-label="Previous review"
           >
             <svg
@@ -207,7 +235,7 @@ export default function Testimonials() {
 
           <button
             onClick={goToNext}
-            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-2 md:translate-x-14 z-10 w-10 h-10 bg-white rounded-full shadow-lg flex items-center justify-center text-secondary-600 hover:text-primary hover:shadow-xl transition-all duration-200"
+            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-2 md:translate-x-16 z-10 w-12 h-12 bg-white/10 backdrop-blur-lg rounded-full flex items-center justify-center text-white hover:bg-[#D4AF37] hover:text-secondary-900 transition-all duration-300 border border-white/20 hover:border-[#D4AF37]"
             aria-label="Next review"
           >
             <svg
@@ -225,20 +253,27 @@ export default function Testimonials() {
             </svg>
           </button>
 
-          {/* Testimonial Card - Fixed Height */}
-          <Card className="bg-white mx-4 md:mx-0 h-[340px] md:h-[320px]">
-            <CardContent className="p-4 md:p-6 h-full flex flex-col">
+          {/* Testimonial Card - Pure White with Gigantic Shadow */}
+          <Card className="bg-white mx-4 md:mx-0 shadow-[0_25px_50px_-12px_rgba(0,0,0,0.5)] hover:shadow-[0_35px_60px_-15px_rgba(0,0,0,0.6)] transition-shadow duration-500">
+            <CardContent className="p-6 md:p-10 h-full flex flex-col relative">
+              {/* Large Decorative Gold Quote Mark */}
+              <div className="absolute top-4 left-6 text-[#D4AF37]/20">
+                <svg className="w-16 h-16" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+                </svg>
+              </div>
+
               {/* Service Type */}
-              <p className="text-xs text-primary font-medium mb-2 uppercase tracking-wide">
+              <p className="text-xs text-[#D4AF37] font-semibold mb-3 uppercase tracking-wider relative z-10">
                 {currentTestimonial.service}
               </p>
 
               {/* Rating Stars */}
-              <div className="flex gap-1 mb-3">
+              <div className="flex gap-1 mb-4 relative z-10">
                 {[...Array(currentTestimonial.rating)].map((_, i) => (
                   <svg
                     key={i}
-                    className="w-4 h-4 text-primary"
+                    className="w-5 h-5 text-[#D4AF37]"
                     fill="currentColor"
                     viewBox="0 0 20 20"
                   >
@@ -247,9 +282,9 @@ export default function Testimonials() {
                 ))}
               </div>
 
-              {/* Quote - Fixed Height Container */}
-              <div className="flex-grow overflow-hidden">
-                <blockquote className="text-secondary-600 mb-3 leading-relaxed text-sm md:text-base">
+              {/* Quote */}
+              <div className="flex-grow overflow-hidden relative z-10">
+                <blockquote className="text-secondary-700 mb-4 leading-relaxed text-base md:text-lg font-medium">
                   "{displayContent}"
                 </blockquote>
               </div>
@@ -258,30 +293,30 @@ export default function Testimonials() {
               {isLongContent && (
                 <button
                   onClick={toggleExpand}
-                  className="text-primary text-sm font-medium hover:underline mb-3 self-start"
+                  className="text-[#D4AF37] text-sm font-semibold hover:underline mb-4 self-start relative z-10 transition-colors duration-200"
                 >
                   {expanded ? "Read less" : "Read more"}
                 </button>
               )}
 
               {/* Author */}
-              <div className="flex items-center gap-2 mt-auto">
-                <div className="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center">
-                  <span className="text-primary font-semibold text-sm">
+              <div className="flex items-center gap-3 mt-auto pt-4 border-t border-gray-100 relative z-10">
+                <div className="w-12 h-12 bg-gradient-to-br from-[#D4AF37] to-[#8B6914] rounded-full flex items-center justify-center shadow-lg">
+                  <span className="text-white font-bold text-lg">
                     {currentTestimonial.name
                       ? currentTestimonial.name.charAt(0)
                       : "C"}
                   </span>
                 </div>
                 <div>
-                  <p className="font-semibold text-secondary-900 text-sm">
+                  <p className="font-bold text-secondary-900 text-base">
                     {currentTestimonial.name || "CRC Carpentry Customer"}
                   </p>
-                  <p className="text-xs text-secondary-500">
+                  <p className="text-sm text-secondary-500">
                     {currentTestimonial.location
-                      ? `Location: ${currentTestimonial.location}`
+                      ? `${currentTestimonial.location}`
                       : currentTestimonial.source
-                      ? `Source: ${currentTestimonial.source}`
+                      ? `${currentTestimonial.source}`
                       : "Verified Customer"}
                   </p>
                 </div>
@@ -290,7 +325,7 @@ export default function Testimonials() {
           </Card>
 
           {/* Dots Indicator */}
-          <div className="flex justify-center gap-1.5 mt-4 flex-wrap px-2">
+          <div className="flex justify-center gap-2 mt-8 flex-wrap px-2">
             {testimonials.map((_, index) => (
               <button
                 key={index}
@@ -298,10 +333,10 @@ export default function Testimonials() {
                   setCurrentIndex(index);
                   setExpanded(false);
                 }}
-                className={`rounded-full transition-all duration-200 ${
+                className={`rounded-full transition-all duration-300 ${
                   index === currentIndex
-                    ? "bg-primary w-5 h-2"
-                    : "bg-gray-300 hover:bg-gray-400 w-2 h-2"
+                    ? "bg-[#D4AF37] w-8 h-2"
+                    : "bg-white/30 hover:bg-white/60 w-3 h-3"
                 }`}
                 aria-label={`Go to review ${index + 1}`}
               />
@@ -309,8 +344,8 @@ export default function Testimonials() {
           </div>
 
           {/* Review Counter */}
-          <p className="text-center text-xs text-secondary-400 mt-2">
-            {currentIndex + 1} of {testimonials.length}
+          <p className="text-center text-sm text-white/60 mt-4 font-medium">
+            {currentIndex + 1} of {testimonials.length} reviews
           </p>
         </div>
       </Container>

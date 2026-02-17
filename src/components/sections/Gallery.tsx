@@ -16,7 +16,7 @@ const galleryItems = [
     location: "Leighton Buzzard",
     category: "Carpentry",
     href: "/projects",
-    image: "https://minimax-algeng-chat-tts-us.oss-us-east-1.aliyuncs.com/ccv2%2F2026-02-17%2FMiniMax-M2.5%2F2022335301715759817%2Fac34eba7e9a8f0bb7cb78ec8f4a9190d7e5c72007e21576fb681066299ca6b35..webp?Expires=1771352078&OSSAccessKeyId=LTAI5tCpJNKCf5EkQHSuL9xg&Signature=wTK6D%2FWdQYURydLXgHV7Fo3vZQA%3D",
+    image: "https://minimax-algeng-chat-tts-us.oss-us-east-1.aliyuncs.com/ccv2%2F2026-02-17%2FMiniMax-M2.5%2F2022335301715759817%2Fac34eba7e9a8f0bb7cb78ec8f4a9190d7e5c72007e21576fb681066299ca6b35..webp?Expires=1771352078&OSSAccessKeyId=LTAI5tCpJNKCf5EkQHSuL9xg&Signature=mTK6D%2FWdQYURydLXgHV7Fo3vZQA%3D",
   },
   {
     id: 3,
@@ -38,24 +38,37 @@ const galleryItems = [
 
 export default function Gallery() {
   return (
-    <section className="py-16 md:py-24 relative overflow-hidden bg-gradient-to-br from-[#F0EDE8] via-[#F5F2ED] to-[#EAE6DF]" id="projects">
+    <section className="py-16 md:py-24 relative overflow-hidden" id="projects">
+      {/* Dramatic Background Gradient */}
+      <div className="absolute inset-0 bg-gradient-to-br from-black via-[#2C1810] to-[#3A3A3A]" />
       
+      {/* Subtle Gold Geometric Pattern (3% opacity) */}
+      <div className="absolute inset-0 opacity-[0.03]" 
+        style={{
+          backgroundImage: `url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 0L40 20L20 40L0 20L20 0zM20 10L30 20L20 30L10 20L20 10z' stroke='%23D4AF37' fill='none' stroke-width='0.5'/%3E%3C/svg%3E")`,
+          backgroundSize: '40px 40px'
+        }}
+      />
+      
+      {/* Additional subtle radial gradient for depth */}
+      <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
+
       <Container className="relative z-10">
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-12">
           <div className="max-w-2xl">
             <span className="inline-block text-primary font-semibold text-sm tracking-wider uppercase mb-3">Our Portfolio</span>
-            <h2 className="text-3xl md:text-4xl font-bold text-secondary-900 mb-4">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
               Our Latest Projects
             </h2>
-            <p className="text-secondary-600 text-lg">
+            <p className="text-gray-400 text-lg">
               Browse our portfolio of completed kitchen fitting, carpentry, and flooring projects
               across Milton Keynes and Buckinghamshire.
             </p>
           </div>
           <Link
             href="/projects"
-            className="group inline-flex items-center text-primary font-semibold text-lg hover:text-primary-dark transition-all duration-300"
+            className="group inline-flex items-center text-primary font-semibold text-lg hover:text-white transition-all duration-300"
           >
             View All Projects
             <svg className="w-5 h-5 ml-2 transform group-hover:translate-x-2 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -70,23 +83,22 @@ export default function Gallery() {
             <Link
               key={item.id}
               href={item.href}
-              className="group relative aspect-[4/3] rounded-xl overflow-hidden bg-gray-100 cursor-pointer animate-fade-in-up block flex-shrink-0 w-[85vw] md:w-auto"
-              style={{ animationDelay: `${index * 0.15}s`, opacity: 0 }}
+              className="group relative aspect-[4/3] rounded-2xl overflow-hidden bg-gray-900/50 cursor-pointer block flex-shrink-0 w-[85vw] md:w-auto shadow-2xl hover:shadow-[0_25px_50px_-12px_rgba(0,0,0,0.5)] transition-all duration-500"
             >
               {/* Image with zoom effect */}
               <div
-                className="absolute inset-0 bg-cover bg-center group-hover:scale-105 transition-transform duration-500"
+                className="absolute inset-0 bg-cover bg-center group-hover:scale-110 transition-transform duration-700"
                 style={{ backgroundImage: `url('${item.image}')` }}
               />
               
-              {/* Overlay - Always visible */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent">
-                <div className="absolute bottom-0 left-0 right-0 p-6">
+              {/* Gradient Overlay */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-black/10">
+                <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8">
                   {/* Gold badge */}
-                  <p className="inline-block text-xs font-medium mb-2 px-3 py-1 bg-primary/80 backdrop-blur-sm text-white rounded-full uppercase tracking-wider">{item.category}</p>
-                  <h3 className="text-white text-xl font-semibold mb-1">{item.title}</h3>
+                  <p className="inline-block text-xs font-medium mb-3 px-4 py-1.5 bg-[#D4AF37]/90 backdrop-blur-sm text-secondary-900 rounded-full uppercase tracking-wider font-semibold">{item.category}</p>
+                  <h3 className="text-white text-xl md:text-2xl font-bold mb-2">{item.title}</h3>
                   <p className="text-gray-300 text-sm flex items-center">
-                    <svg className="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-4 h-4 mr-1 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                     </svg>
@@ -95,8 +107,12 @@ export default function Gallery() {
                 </div>
               </div>
 
-              {/* Hover overlay */}
-              <div className="absolute inset-0 bg-primary/0 group-hover:bg-primary/10 transition-colors duration-300" />
+              {/* Hover overlay with shine effect */}
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
+              <div className="absolute inset-0 bg-[#D4AF37]/0 group-hover:bg-[#D4AF37]/10 transition-colors duration-300" />
+              
+              {/* Gold border on hover */}
+              <div className="absolute inset-0 border-2 border-[#D4AF37]/0 group-hover:border-[#D4AF37]/50 rounded-2xl transition-all duration-300" />
             </Link>
           ))}
         </div>

@@ -43,6 +43,36 @@ const features = [
   },
 ];
 
+const stats = [
+  {
+    value: "10+",
+    label: "Years Experience",
+    icon: (
+      <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+      </svg>
+    ),
+  },
+  {
+    value: "5-Star",
+    label: "Customer Rated",
+    icon: (
+      <svg className="w-10 h-10" fill="currentColor" viewBox="0 0 20 20">
+        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+      </svg>
+    ),
+  },
+  {
+    value: "Free",
+    label: "Quotations",
+    icon: (
+      <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+      </svg>
+    ),
+  },
+];
+
 export default function WhyChooseUs() {
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
@@ -67,28 +97,63 @@ export default function WhyChooseUs() {
 
   return (
     <section ref={sectionRef} className="py-20 md:py-24 relative overflow-hidden" id="about">
-      {/* Premium Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[#FAFAF8] to-[#F5EFE6]" />
+      {/* Premium Background - Woodworking image with heavy blur and overlay */}
+      <div className="absolute inset-0">
+        {/* Woodworking background image */}
+        <div 
+          className="absolute inset-0 bg-cover bg-center"
+          style={{
+            backgroundImage: "url('https://minimax-algeng-chat-tts-us.oss-us-east-1.aliyuncs.com/ccv2%2F2026-02-17%2FMiniMax-M2.5%2F2022335301715759817%2F3c2d096cc1a8716a5401a126c95e852cbd90362963a80a26dc637ebb0b02039a..webp?Expires=1771352196&OSSAccessKeyId=LTAI5tCpJNKCf5EkQHSuL9xg&Signature=W%2B80p1%2Fl9zywiPnIYk5o6IPPg6U%3D')",
+          }}
+        />
+        {/* Heavy blur for depth */}
+        <div className="absolute inset-0 backdrop-blur-xl" />
+        {/* Dark overlay gradient - 85% opacity */}
+        <div className="absolute inset-0 bg-gradient-to-br from-black/90 via-black/85 to-black/80" />
+      </div>
       
-      {/* Subtle geometric pattern - chevron */}
-      <div className="absolute inset-0 opacity-[0.04]" 
+      {/* Subtle gold pattern overlay */}
+      <div className="absolute inset-0 opacity-[0.03]" 
         style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0L60 30L30 60L0 30L30 0z' stroke='%23D5B054' fill='none' stroke-width='1'/%3E%3C/svg%3E")`,
+          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0L60 30L30 60L0 30L30 0z' stroke='%23D4AF37' fill='none' stroke-width='1'/%3E%3C/svg%3E")`,
           backgroundSize: '60px 60px'
         }}
       />
       
       <Container className="relative z-10">
         {/* Section Header */}
-        <div className={`text-center max-w-3xl mx-auto mb-12 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+        <div className={`text-center max-w-3xl mx-auto mb-16 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
           <span className="inline-block text-primary font-medium text-sm tracking-wider uppercase mb-3">Why Choose Us</span>
-          <h2 className="text-3xl md:text-4xl font-bold text-secondary-900 mb-4">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
             The CRC Difference
           </h2>
-          <p className="text-secondary-600 text-lg">
+          <p className="text-gray-300 text-lg">
             With over 10 years of experience, we bring expertise, dedication, and 
             passion to every project we undertake.
           </p>
+        </div>
+
+        {/* Stats Bar - Premium Dark with Gold Accents */}
+        <div className={`flex flex-wrap justify-center items-center gap-8 md:gap-16 mb-16 transition-all duration-700 delay-200 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+          {stats.map((stat, index) => (
+            <div key={stat.label} className="flex items-center gap-4">
+              {/* Gold icon with shimmer/glow effect */}
+              <div className="relative">
+                <div className="absolute inset-0 bg-primary/30 blur-xl rounded-full transform scale-150" />
+                <div className="relative w-16 h-16 rounded-full bg-gradient-to-br from-[#D4AF37] to-[#8B6914] flex items-center justify-center text-white shadow-2xl">
+                  {stat.icon}
+                </div>
+              </div>
+              <div className="text-left">
+                <p className="text-3xl md:text-4xl font-bold text-white">{stat.value}</p>
+                <p className="text-sm text-gray-400">{stat.label}</p>
+              </div>
+              {/* Gold vertical separator - hidden on last item and mobile */}
+              {index < stats.length - 1 && (
+                <div className="hidden md:block w-px h-16 bg-gradient-to-b from-transparent via-[#D4AF37] to-transparent ml-4" />
+              )}
+            </div>
+          ))}
         </div>
 
         {/* Features Grid - 4 columns on desktop */}
@@ -97,22 +162,25 @@ export default function WhyChooseUs() {
             <div 
               key={feature.title}
               className={`text-center group transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
-              style={{ transitionDelay: isVisible ? `${index * 0.1 + 0.2}s` : '0s' }}
+              style={{ transitionDelay: isVisible ? `${index * 0.1 + 0.4}s` : '0s' }}
             >
-              {/* Card with hover effects */}
-              <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 md:p-8 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border-t-2 border-transparent hover:border-primary h-full">
-                {/* Icon with animation */}
-                <div className="inline-flex items-center justify-center w-16 h-16 bg-primary/10 rounded-2xl text-primary mb-6 group-hover:bg-primary group-hover:text-white transition-all duration-300 group-hover:scale-110 group-hover:rotate-3">
-                  {feature.icon}
+              {/* Semi-transparent card with backdrop blur and gold border */}
+              <div className="bg-white/5 backdrop-blur-lg rounded-2xl p-6 md:p-8 shadow-2xl border border-[#D4AF37]/20 hover:border-[#D4AF37]/60 transition-all duration-500 hover:-translate-y-2 h-full group-hover:shadow-2xl group-hover:shadow-[#D4AF37]/10">
+                {/* Gold icon with glow on hover */}
+                <div className="relative inline-flex items-center justify-center w-16 h-16 bg-[#D4AF37]/10 rounded-2xl text-[#D4AF37] mb-6 group-hover:bg-[#D4AF37] group-hover:text-white transition-all duration-300 group-hover:scale-110 group-hover:rotate-3">
+                  <div className="absolute inset-0 bg-[#D4AF37]/20 blur-xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  <div className="relative z-10">
+                    {feature.icon}
+                  </div>
                 </div>
                 
                 {/* Title */}
-                <h3 className="text-lg md:text-xl font-bold text-secondary-900 mb-3">
+                <h3 className="text-lg md:text-xl font-bold text-white mb-3">
                   {feature.title}
                 </h3>
                 
                 {/* Description */}
-                <p className="text-secondary-600 text-sm md:text-base leading-relaxed">
+                <p className="text-gray-400 text-sm md:text-base leading-relaxed">
                   {feature.description}
                 </p>
               </div>
