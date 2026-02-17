@@ -90,7 +90,7 @@ export default function Header() {
           "fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white",
           isScrolled ? "shadow-md" : "shadow-sm"
         )}
-        style={{ height: "80px", overflow: "visible" }}
+        style={{ height: "90px", overflow: "visible" }}
       >
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 h-full">
           <div className="flex items-center justify-between h-full">
@@ -119,10 +119,10 @@ export default function Header() {
                 <Image
                   src={logoUrl}
                   alt="CRC Carpentry & Joinery"
-                  width={180}
-                  height={50}
+                  width={200}
+                  height={60}
                   className="h-auto"
-                  style={{ height: "50px", width: "auto" }}
+                  style={{ height: "60px", width: "auto" }}
                   unoptimized
                 />
               </Link>
@@ -208,9 +208,9 @@ export default function Header() {
                   src={logoUrl}
                   alt="CRC Carpentry & Joinery"
                   width={180}
-                  height={50}
+                  height={45}
                   className="h-auto"
-                  style={{ height: "40px", width: "auto" }}
+                  style={{ height: "45px", width: "auto" }}
                   unoptimized
                 />
               </Link>
