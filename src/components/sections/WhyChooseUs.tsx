@@ -66,11 +66,22 @@ export default function WhyChooseUs() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="py-16 md:py-24 bg-gray-50" id="about">
-      <Container>
+    <section ref={sectionRef} className="py-20 md:py-24 relative overflow-hidden" id="about">
+      {/* Premium Background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-[#FAFAF8] to-[#F5EFE6]" />
+      
+      {/* Subtle geometric pattern - chevron */}
+      <div className="absolute inset-0 opacity-[0.04]" 
+        style={{
+          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0L60 30L30 60L0 30L30 0z' stroke='%23D5B054' fill='none' stroke-width='1'/%3E%3C/svg%3E")`,
+          backgroundSize: '60px 60px'
+        }}
+      />
+      
+      <Container className="relative z-10">
         {/* Section Header */}
         <div className={`text-center max-w-3xl mx-auto mb-12 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-          <span className="inline-block text-primary font-medium text-sm mb-3">Why Choose Us</span>
+          <span className="inline-block text-primary font-medium text-sm tracking-wider uppercase mb-3">Why Choose Us</span>
           <h2 className="text-3xl md:text-4xl font-bold text-secondary-900 mb-4">
             The CRC Difference
           </h2>
@@ -81,27 +92,30 @@ export default function WhyChooseUs() {
         </div>
 
         {/* Features Grid - 4 columns on desktop */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 lg:gap-8">
           {features.map((feature, index) => (
             <div 
               key={feature.title}
               className={`text-center group transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
               style={{ transitionDelay: isVisible ? `${index * 0.1 + 0.2}s` : '0s' }}
             >
-              {/* Icon */}
-              <div className="inline-flex items-center justify-center w-16 h-16 bg-primary/10 rounded-2xl text-primary mb-6 group-hover:bg-primary group-hover:text-white transition-all duration-300 group-hover:scale-110">
-                {feature.icon}
+              {/* Card with hover effects */}
+              <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 md:p-8 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border-t-2 border-transparent hover:border-primary h-full">
+                {/* Icon with animation */}
+                <div className="inline-flex items-center justify-center w-16 h-16 bg-primary/10 rounded-2xl text-primary mb-6 group-hover:bg-primary group-hover:text-white transition-all duration-300 group-hover:scale-110 group-hover:rotate-3">
+                  {feature.icon}
+                </div>
+                
+                {/* Title */}
+                <h3 className="text-lg md:text-xl font-bold text-secondary-900 mb-3">
+                  {feature.title}
+                </h3>
+                
+                {/* Description */}
+                <p className="text-secondary-600 text-sm md:text-base leading-relaxed">
+                  {feature.description}
+                </p>
               </div>
-              
-              {/* Title */}
-              <h3 className="text-xl font-bold text-secondary-900 mb-3">
-                {feature.title}
-              </h3>
-              
-              {/* Description */}
-              <p className="text-secondary-600 leading-relaxed">
-                {feature.description}
-              </p>
             </div>
           ))}
         </div>
