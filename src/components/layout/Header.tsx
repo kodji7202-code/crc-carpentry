@@ -30,7 +30,7 @@ export default function Header() {
   // Handle scroll effect
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
+      setIsScrolled(window.scrollY > 50);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -83,14 +83,20 @@ export default function Header() {
     setIsMobileMenuOpen(false);
   };
 
+  // Determine if header should show light text (over hero)
+  const showLightText = !isScrolled;
+
   return (
     <>
       <header
         className={cn(
-          "fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white",
-          isScrolled ? "shadow-md" : "shadow-sm"
+          "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
+          // Transparent state (when at top)
+          !isScrolled && "bg-transparent",
+          // Scrolled state
+          isScrolled && "bg-white/95 backdrop-blur-md shadow-sm border-b border-primary/20"
         )}
-        style={{ height: "90px", overflow: "visible" }}
+        style={{ height: "90px" }}
       >
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 h-full">
           <div className="flex items-center justify-between h-full">
@@ -103,8 +109,8 @@ export default function Header() {
                   onClick={(e) => handleSmoothScroll(e, link.href)}
                   className={cn(
                     "text-sm font-medium transition-colors duration-200 whitespace-nowrap",
-                    activeSection === link.sectionId
-                      ? "text-primary"
+                    showLightText 
+                      ? "text-white hover:text-primary-light drop-shadow-md" 
                       : "text-secondary-700 hover:text-primary"
                   )}
                 >
@@ -116,15 +122,20 @@ export default function Header() {
             {/* Logo - Centered */}
             <div className="flex-shrink-0">
               <Link href="/" className="block">
-                <Image
-                  src={logoUrl}
-                  alt="CRC Carpentry & Joinery"
-                  width={200}
-                  height={60}
-                  className="h-auto"
-                  style={{ height: "60px", width: "auto" }}
-                  unoptimized
-                />
+                <div className={cn(
+                  "transition-all duration-300",
+                  showLightText && "drop-shadow-lg"
+                )}>
+                  <Image
+                    src={logoUrl}
+                    alt="CRC Carpentry & Joinery"
+                    width={200}
+                    height={60}
+                    className="h-auto"
+                    style={{ height: "60px", width: "auto" }}
+                    unoptimized
+                  />
+                </div>
               </Link>
             </div>
 
@@ -137,8 +148,8 @@ export default function Header() {
                   onClick={(e) => handleSmoothScroll(e, link.href)}
                   className={cn(
                     "text-sm font-medium transition-colors duration-200 whitespace-nowrap",
-                    activeSection === link.sectionId
-                      ? "text-primary"
+                    showLightText 
+                      ? "text-white hover:text-primary-light drop-shadow-md" 
                       : "text-secondary-700 hover:text-primary"
                   )}
                 >
@@ -150,7 +161,12 @@ export default function Header() {
             {/* Mobile Menu Button */}
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="lg:hidden p-2 text-secondary-700 hover:text-primary"
+              className={cn(
+                "lg:hidden p-2 transition-colors duration-200",
+                showLightText 
+                  ? "text-white hover:text-primary-light" 
+                  : "text-secondary-700 hover:text-primary"
+              )}
               aria-label="Toggle menu"
             >
               <svg
