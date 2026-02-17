@@ -12,7 +12,7 @@ export default function Hero() {
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: "url('https://minimax-algeng-chat-tts-us.oss-us-east-1.aliyuncs.com/ccv2%2F2026-02-17%2FMiniMax-M2.5%2F2022335301715759817%2Faeb48fbdd9339076cd0e93bb65a3e7e9db826100e24d0b4508394a53406a3765..webp?Expires=1771346158&OSSAccessKeyId=LTAI5tCpJNKCf5EkQHSuL9xg&Signature=vITRNRmhU1SE%2FwmQxQPiV%2FqhW2g%3D')",
+            backgroundImage: "url('https://minimax-algeng-chat-tts-us.oss-us-east-1.aliyuncs.com/ccv2%2F2026-02-18%2FMiniMax-M2.5%2F2022335301715759817%2Faeb48fbdd9339076cd0e93bb65a3e7e9db826100e24d0b4508394a53406a3765..webp?Expires=1771435468&OSSAccessKeyId=LTAI5tCpJNKCf5EkQHSuL9xg&Signature=mOfc4Gz8yoZ8aeR%2BtDeylThnlEM%3D')",
           }}
         />
         {/* Dark overlay for better text readability */}
