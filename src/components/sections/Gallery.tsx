@@ -38,16 +38,7 @@ const galleryItems = [
 
 export default function Gallery() {
   return (
-    <section className="py-16 md:py-24 relative overflow-hidden" id="projects">
-      {/* Premium Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[#F8F9FA] via-[#FEFEFE] to-[#F5F3EF]" />
-      
-      {/* Subtle dot pattern */}
-      <div className="absolute inset-0 opacity-[0.03]" 
-        style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='20' cy='20' r='1' fill='%23333'/%3E%3C/svg%3E")`,
-        }}
-      />
+    <section className="py-16 md:py-24 relative overflow-hidden bg-gradient-to-br from-[#F0EDE8] via-[#F5F2ED] to-[#EAE6DF]" id="projects">
       
       <Container className="relative z-10">
         {/* Section Header */}
