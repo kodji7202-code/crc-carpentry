@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { cn } from "@/lib/utils";
 
 // Navigation links - left side
@@ -17,6 +18,9 @@ const rightNavLinks = [
   { name: "Testimonials", href: "#testimonials", sectionId: "testimonials" },
   { name: "Contact", href: "#contact", sectionId: "contact" },
 ];
+
+// Logo URL from user
+const logoUrl = "https://minimax-algeng-chat-tts-us.oss-us-east-1.aliyuncs.com/ccv2%2F2026-02-18%2FMiniMax-M2.5%2F2022335301715759817%2F2051a4894bcce01fca2e96f9d8d7e151e78ecc29c599fe8807a6ccec1fa00cdd..png?Expires=1771434839&OSSAccessKeyId=LTAI5tCpJNKCf5EkQHSuL9xg&Signature=6AOvA4RI%2FZFCgCWdTx5p0d%2FINbA%3D";
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -111,19 +115,16 @@ export default function Header() {
 
             {/* Logo - Centered */}
             <div className="flex-shrink-0">
-              <Link href="/" className="flex items-center gap-3">
-                {/* Logo Icon - Gold colored */}
-                <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
-                  <span className="text-white font-bold text-lg">C</span>
-                </div>
-                <div className="flex flex-col">
-                  <span className="text-xl font-bold text-secondary-900 leading-tight">
-                    CRC
-                  </span>
-                  <span className="text-xs text-secondary-600">
-                    Carpentry & Joinery
-                  </span>
-                </div>
+              <Link href="/" className="block">
+                <Image
+                  src={logoUrl}
+                  alt="CRC Carpentry & Joinery"
+                  width={180}
+                  height={50}
+                  className="h-auto"
+                  style={{ height: "50px", width: "auto" }}
+                  unoptimized
+                />
               </Link>
             </div>
 
@@ -199,20 +200,20 @@ export default function Header() {
             isMobileMenuOpen ? "translate-x-0" : "translate-x-full"
           )}
         >
-          <div className="pt-24 px-6 pb-6">
+          <div className="pt-20 px-6 pb-6">
             {/* Mobile Logo */}
-            <div className="flex items-center gap-3 mb-6 pb-4 border-b border-gray-100">
-              <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-lg">C</span>
-              </div>
-              <div className="flex flex-col">
-                <span className="text-xl font-bold text-secondary-900 leading-tight">
-                  CRC
-                </span>
-                <span className="text-xs text-secondary-600">
-                  Carpentry & Joinery
-                </span>
-              </div>
+            <div className="mb-6 pb-4 border-b border-gray-100">
+              <Link href="/" onClick={() => setIsMobileMenuOpen(false)}>
+                <Image
+                  src={logoUrl}
+                  alt="CRC Carpentry & Joinery"
+                  width={180}
+                  height={50}
+                  className="h-auto"
+                  style={{ height: "40px", width: "auto" }}
+                  unoptimized
+                />
+              </Link>
             </div>
 
             {/* Mobile Navigation Links */}
