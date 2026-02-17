@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/Button";
 
 export default function Hero() {
   return (
-    <section className="relative min-h-[90vh] lg:min-h-screen flex items-center overflow-hidden">
+    <section id="hero" className="relative min-h-[90vh] lg:min-h-screen flex items-center overflow-hidden">
       {/* Background Image with Overlay */}
       <div className="absolute inset-0">
         {/* Placeholder for background image - replace with actual image */}

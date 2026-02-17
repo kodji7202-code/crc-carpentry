@@ -170,7 +170,7 @@ export default function Testimonials() {
       : currentTestimonial.content.slice(0, MAX_CHARS) + "...";
 
   return (
-    <section className="py-8 md:py-12 bg-gray-50">
+    <section id="testimonials" className="py-8 md:py-12 bg-gray-50">
       <Container>
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-6">

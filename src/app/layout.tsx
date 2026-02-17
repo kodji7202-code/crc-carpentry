@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { DM_Sans, Playfair_Display } from "next/font/google";
 import "@/styles/globals.css";
+import Header from "@/components/layout/Header";
 
 // Body font - Clean sans-serif
 const dmSans = DM_Sans({
@@ -57,7 +58,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className={`${dmSans.variable} ${playfairDisplay.variable} font-sans antialiased`}>
+      <body className={`${dmSans.variable} ${playfairDisplay.variable} font-sans antialiased pt-20`}>
+        <Header />
         {children}
       </body>
     </html>

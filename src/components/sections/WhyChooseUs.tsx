@@ -66,7 +66,7 @@ export default function WhyChooseUs() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="py-16 md:py-24 bg-gray-50" id="why-choose-us">
+    <section ref={sectionRef} className="py-16 md:py-24 bg-gray-50" id="about">
       <Container>
         {/* Section Header */}
         <div className={`text-center max-w-3xl mx-auto mb-12 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
