@@ -56,34 +56,40 @@ const services = [
 export default function Services() {
   return (
     <section className="py-20 md:py-24 relative overflow-hidden" id="services">
-      {/* Premium Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[#FAF8F3] to-[#F5F1E8]" />
+      {/* Dramatic Premium Background - Option 2: Gradient Sophisticated */}
+      <div className="absolute inset-0 bg-gradient-to-br from-[#1a1a1a] via-[#2C2C2C] to-[#1a1a1a]" />
       
-      {/* Subtle Wood Texture Pattern */}
+      {/* Golden geometric pattern overlay */}
       <div className="absolute inset-0 opacity-[0.03]" 
         style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23D5B054' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+          backgroundImage: `url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h80v80H0V0zm40 40L10 70M40 40l30 30M40 40L10 10M40 40l30-30' stroke='%23D5B054' stroke-width='1' fill='none'/%3E%3C/svg%3E")`,
         }}
       />
       
+      {/* Subtle radial highlight from top */}
+      <div className="absolute inset-0 bg-gradient-radial from-[#3E2723]/30 via-transparent to-transparent" />
+      
+      {/* Bottom fade */}
+      <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-[#0a0a0a] to-transparent" />
+      
       <Container className="relative z-10">
-        {/* Section Header */}
+        {/* Section Header - Light colors for contrast */}
         <div className="text-center max-w-3xl mx-auto mb-10 md:mb-12">
-          <span className="inline-block text-primary font-semibold text-sm tracking-wider uppercase mb-3">
+          <span className="inline-block text-primary font-semibold text-sm tracking-[0.2em] uppercase mb-3">
             Our Services
           </span>
-          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-secondary-900 mb-4">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
             Professional{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-primary-dark">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-[#E8C97A] to-primary">
               Kitchen
             </span>{" "}
             &{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-primary-dark">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-[#E8C97A] to-primary">
               Flooring
             </span>{" "}
             Services
           </h2>
-          <p className="text-secondary-600 text-base md:text-lg max-w-2xl mx-auto">
+          <p className="text-gray-300 text-base md:text-lg max-w-2xl mx-auto">
             Expert installation and refurbishment services for kitchens and flooring across Milton Keynes and Buckinghamshire.
           </p>
         </div>
@@ -93,9 +99,9 @@ export default function Services() {
           {services.map((service, index) => (
             <ScrollReveal key={service.title} delay={index * 0.15}>
               <Link href={service.href} className="block group flex-shrink-0 w-[85vw] md:w-full max-w-md">
-                <div className={`relative overflow-hidden rounded-2xl bg-white border border-gray-100 p-5 md:p-6 lg:p-8 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 h-full group-hover:border-t-2 group-hover:border-t-primary`}>
-                  {/* Decorative gradient overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-white/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div className={`relative overflow-hidden rounded-2xl bg-white border-0 p-5 md:p-6 lg:p-8 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 h-full`}>
+                  {/* Decorative gradient overlay on hover */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   
                   <div className="relative z-10">
                     {/* Icon */}
