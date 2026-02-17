@@ -20,7 +20,7 @@ const rightNavLinks = [
 ];
 
 // Logo URL from user
-const logoUrl = "https://minimax-algeng-chat-tts-us.oss-us-east-1.aliyuncs.com/ccv2%2F2026-02-18%2FMiniMax-M2.5%2F2022335301715759817%2F2051a4894bcce01fca2e96f9d8d7e151e78ecc29c599fe8807a6ccec1fa00cdd..png?Expires=1771434839&OSSAccessKeyId=LTAI5tCpJNKCf5EkQHSuL9xg&Signature=6AOvA4RI%2FZFCgCWdTx5p0d%2FINbA%3D";
+const logoUrl = "https://minimax-algeng-chat-tts-us.oss-us-east-1.aliyuncs.com/ccv2%2F2026-02-18%2FMiniMax-M2.5%2F2022335301715759817%2Fc46b876302e9988c3e9220e0576fc8d183150dafe29b1d1ed5a1547ecf56d463..png?Expires=1771435225&OSSAccessKeyId=LTAI5tCpJNKCf5EkQHSuL9xg&Signature=p4APd5q0U7y8nH9CzWoqUcZI5ig%3D";
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
