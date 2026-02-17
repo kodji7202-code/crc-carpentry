@@ -89,10 +89,10 @@ export default function Services() {
         </div>
 
         {/* Services Grid - Horizontal scroll on mobile */}
-        <div className="flex md:grid md:grid-cols-2 gap-4 md:gap-6 lg:gap-8 max-w-4xl mx-auto overflow-x-auto md:overflow-visible pb-4 md:pb-0 scrollbar-hide -mx-4 px-4 md:mx-0 md:px-0">
+        <div className="flex md:grid md:grid-cols-2 gap-6 lg:gap-8 max-w-6xl mx-auto overflow-x-auto md:overflow-visible pb-4 md:pb-0 scrollbar-hide -mx-4 px-4 md:mx-0 md:px-0 justify-items-center">
           {services.map((service, index) => (
             <ScrollReveal key={service.title} delay={index * 0.15}>
-              <Link href={service.href} className="block group flex-shrink-0 w-[85vw] md:w-auto">
+              <Link href={service.href} className="block group flex-shrink-0 w-[85vw] md:w-full max-w-md">
                 <div className={`relative overflow-hidden rounded-2xl bg-white border border-gray-100 p-5 md:p-6 lg:p-8 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 h-full group-hover:border-t-2 group-hover:border-t-primary`}>
                   {/* Decorative gradient overlay */}
                   <div className="absolute inset-0 bg-gradient-to-br from-white/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
