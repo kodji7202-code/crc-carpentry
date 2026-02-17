@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import Image from "next/image";
 import { cn } from "@/lib/utils";
 
 // Navigation links - left side
@@ -84,23 +83,22 @@ export default function Header() {
     <>
       <header
         className={cn(
-          "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
-          isScrolled
-            ? "bg-white shadow-md"
-            : "bg-white"
+          "fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white",
+          isScrolled ? "shadow-md" : "shadow-sm"
         )}
+        style={{ height: "80px", overflow: "visible" }}
       >
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-20">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 h-full">
+          <div className="flex items-center justify-between h-full">
             {/* Left Navigation - Desktop */}
-            <nav className="hidden lg:flex items-center space-x-1">
+            <nav className="hidden lg:flex items-center space-x-6">
               {leftNavLinks.map((link) => (
                 <a
                   key={link.sectionId}
                   href={link.href}
                   onClick={(e) => handleSmoothScroll(e, link.href)}
                   className={cn(
-                    "px-3 py-2 text-sm font-medium transition-colors duration-200 rounded-md",
+                    "text-sm font-medium transition-colors duration-200 whitespace-nowrap",
                     activeSection === link.sectionId
                       ? "text-primary"
                       : "text-secondary-700 hover:text-primary"
@@ -112,22 +110,17 @@ export default function Header() {
             </nav>
 
             {/* Logo - Centered */}
-            <div className="flex-shrink-0 flex items-center justify-center">
-              <Link href="/" className="flex items-center space-x-2">
-                <div className="relative w-10 h-10">
-                  <Image
-                    src="https://minimax-algeng-chat-tts-us.oss-us-east-1.aliyuncs.com/ccv2%2F2026-02-17%2FMiniMax-M2.5%2F2022335301715759817%2Fb98ca41dbfaaa9ef9b9dcc2ab404302b7b808512b39d3cb42e5ea606fdde4393..jpeg?Expires=1771346155&OSSAccessKeyId=LTAI5tCpJNKCf5EkQHSuL9xg&Signature=%2F956JWG0yhVULhdl178xHUcBoQc%3D"
-                    alt="CRC Carpentry & Joinery"
-                    width={40}
-                    height={40}
-                    className="object-contain"
-                  />
+            <div className="flex-shrink-0">
+              <Link href="/" className="flex items-center gap-3">
+                {/* Logo Icon - Gold colored */}
+                <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
+                  <span className="text-white font-bold text-lg">C</span>
                 </div>
                 <div className="flex flex-col">
-                  <span className="text-lg font-bold text-secondary-900 tracking-wide">
+                  <span className="text-xl font-bold text-secondary-900 leading-tight">
                     CRC
                   </span>
-                  <span className="text-[10px] text-secondary-700 -mt-1">
+                  <span className="text-xs text-secondary-600">
                     Carpentry & Joinery
                   </span>
                 </div>
@@ -135,14 +128,14 @@ export default function Header() {
             </div>
 
             {/* Right Navigation - Desktop */}
-            <nav className="hidden lg:flex items-center space-x-1">
+            <nav className="hidden lg:flex items-center space-x-6">
               {rightNavLinks.map((link) => (
                 <a
                   key={link.sectionId}
                   href={link.href}
                   onClick={(e) => handleSmoothScroll(e, link.href)}
                   className={cn(
-                    "px-3 py-2 text-sm font-medium transition-colors duration-200 rounded-md",
+                    "text-sm font-medium transition-colors duration-200 whitespace-nowrap",
                     activeSection === link.sectionId
                       ? "text-primary"
                       : "text-secondary-700 hover:text-primary"
@@ -156,11 +149,11 @@ export default function Header() {
             {/* Mobile Menu Button */}
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="lg:hidden inline-flex items-center justify-center p-2 rounded-md text-secondary-700 hover:text-primary focus:outline-none"
+              className="lg:hidden p-2 text-secondary-700 hover:text-primary"
               aria-label="Toggle menu"
             >
               <svg
-                className="h-6 w-6"
+                className="w-6 h-6"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -202,34 +195,28 @@ export default function Header() {
         {/* Drawer */}
         <div
           className={cn(
-            "absolute top-0 right-0 w-72 h-full bg-white shadow-xl transform transition-transform duration-300 ease-in-out",
+            "absolute top-0 right-0 w-72 h-full bg-white shadow-xl transform transition-transform duration-300 ease-in-out overflow-y-auto",
             isMobileMenuOpen ? "translate-x-0" : "translate-x-full"
           )}
         >
-          <div className="pt-20 px-6 pb-6">
+          <div className="pt-24 px-6 pb-6">
             {/* Mobile Logo */}
-            <div className="flex items-center space-x-2 mb-8 pb-4 border-b border-gray-100">
-              <div className="relative w-10 h-10">
-                <Image
-                  src="https://minimax-algeng-chat-tts-us.oss-us-east-1.aliyuncs.com/ccv2%2F2026-02-17%2FMiniMax-M2.5%2F2022335301715759817%2Fb98ca41dbfaaa9ef9b9dcc2ab404302b7b808512b39d3cb42e5ea606fdde4393..jpeg?Expires=1771346155&OSSAccessKeyId=LTAI5tCpJNKCf5EkQHSuL9xg&Signature=%2F956JWG0yhVULhdl178xHUcBoQc%3D"
-                  alt="CRC Carpentry & Joinery"
-                  width={40}
-                  height={40}
-                  className="object-contain"
-                />
+            <div className="flex items-center gap-3 mb-6 pb-4 border-b border-gray-100">
+              <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
+                <span className="text-white font-bold text-lg">C</span>
               </div>
               <div className="flex flex-col">
-                <span className="text-lg font-bold text-secondary-900 tracking-wide">
+                <span className="text-xl font-bold text-secondary-900 leading-tight">
                   CRC
                 </span>
-                <span className="text-[10px] text-secondary-700 -mt-1">
+                <span className="text-xs text-secondary-600">
                   Carpentry & Joinery
                 </span>
               </div>
             </div>
 
             {/* Mobile Navigation Links */}
-            <nav className="space-y-2">
+            <nav className="space-y-1">
               {[...leftNavLinks, ...rightNavLinks].map((link) => (
                 <a
                   key={link.sectionId}
