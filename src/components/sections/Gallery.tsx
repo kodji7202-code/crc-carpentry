@@ -8,7 +8,7 @@ const galleryItems = [
     location: "Milton Keynes",
     category: "Kitchen Fitting",
     href: "/projects",
-    image: "https://minimax-algeng-chat-tts-us.oss-us-east-1.aliyuncs.com/ccv2%2F2026-02-17%2FMiniMax-M2.5%2F2022335301715759817%2Faf6701660e393bdb76c6ca8703257c22cc0c38e68ef32a9aeb30a7ab123d81a1..webp?Expires=1771351940&OSSAccessKeyId=LTAI5tCpJNKCf5EkQHSuL9xg&Signature=7HrUsrx9hdMP6UtZlMxBJ3Hu5bc%3D",
+    image: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800&q=80",
   },
   {
     id: 2,
@@ -16,7 +16,7 @@ const galleryItems = [
     location: "Leighton Buzzard",
     category: "Carpentry",
     href: "/projects",
-    image: "https://minimax-algeng-chat-tts-us.oss-us-east-1.aliyuncs.com/ccv2%2F2026-02-17%2FMiniMax-M2.5%2F2022335301715759817%2Fac34eba7e9a8f0bb7cb78ec8f4a9190d7e5c72007e21576fb681066299ca6b35..webp?Expires=1771352078&OSSAccessKeyId=LTAI5tCpJNKCf5EkQHSuL9xg&Signature=mTK6D%2FWdQYURydLXgHV7Fo3vZQA%3D",
+    image: "https://images.unsplash.com/photo-1558997519-83ea9252edf8?w=800&q=80",
   },
   {
     id: 3,
@@ -24,7 +24,7 @@ const galleryItems = [
     location: "Buckinghamshire",
     category: "Carpentry",
     href: "/projects",
-    image: "https://minimax-algeng-chat-tts-us.oss-us-east-1.aliyuncs.com/ccv2%2F2026-02-17%2FMiniMax-M2.5%2F2022335301715759817%2F3c2d096cc1a8716a5401a126c95e852cbd90362963a80a26dc637ebb0b02039a..webp?Expires=1771352196&OSSAccessKeyId=LTAI5tCpJNKCf5EkQHSuL9xg&Signature=W%2B80p1%2Fl9zywiPnIYk5o6IPPg6U%3D",
+    image: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=800&q=80",
   },
   {
     id: 4,
@@ -32,7 +32,7 @@ const galleryItems = [
     location: "Milton Keynes",
     category: "Flooring",
     href: "/projects",
-    image: "https://minimax-algeng-chat-tts-us.oss-us-east-1.aliyuncs.com/ccv2%2F2026-02-17%2FMiniMax-M2.5%2F2022335301715759817%2F240f62c5f4a663672632e32318c89397d5cad5df2d84fc425d117e36f81902d0..webp?Expires=1771352270&OSSAccessKeyId=LTAI5tCpJNKCf5EkQHSuL9xg&Signature=b143p6KsJBXZQIA5%2FmpmjT%2FBjyM%3D",
+    image: "https://images.unsplash.com/photo-1581858726788-75bc0f6a952d?w=800&q=80",
   },
 ];
 

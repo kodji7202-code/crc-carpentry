@@ -100,10 +100,10 @@ export default function WhyChooseUs() {
       {/* Premium Background - Woodworking image with heavy blur and overlay */}
       <div className="absolute inset-0">
         {/* Woodworking background image */}
-        <div 
+        <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage: "url('https://minimax-algeng-chat-tts-us.oss-us-east-1.aliyuncs.com/ccv2%2F2026-02-17%2FMiniMax-M2.5%2F2022335301715759817%2F3c2d096cc1a8716a5401a126c95e852cbd90362963a80a26dc637ebb0b02039a..webp?Expires=1771352196&OSSAccessKeyId=LTAI5tCpJNKCf5EkQHSuL9xg&Signature=W%2B80p1%2Fl9zywiPnIYk5o6IPPg6U%3D')",
+            backgroundImage: "url('https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=1200&q=80')",
           }}
         />
         {/* Heavy blur for depth */}

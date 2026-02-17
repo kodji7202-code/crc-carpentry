@@ -48,10 +48,10 @@ export default function AreasWeServe() {
       {/* Aerial City View Background with Blur and Dark Overlay */}
       <div className="absolute inset-0">
         {/* City/aerial background image */}
-        <div 
+        <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage: "url('https://minimax-algeng-chat-tts-us.oss-us-east-1.aliyuncs.com/ccv2%2F2026-02-17%2FMiniMax-M2.5%2F2022335301715759817%2Faf6701660e393bdb76c6ca8703257c22cc0c38e68ef32a9aeb30a7ab123d81a1..webp?Expires=1771351940&OSSAccessKeyId=LTAI5tCpJNKCf5EkQHSuL9xg&Signature=7HrUsrx9hdMP6UtZlMxBJ3Hu5bc%3D')",
+            backgroundImage: "url('https://images.unsplash.com/photo-1569336415962-a4bd9f69cd83?w=1200&q=80')",
           }}
         />
         {/* Heavy blur for premium effect */}
