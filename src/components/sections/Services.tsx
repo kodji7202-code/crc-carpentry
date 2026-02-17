@@ -55,25 +55,45 @@ const services = [
 
 export default function Services() {
   return (
-    <section className="py-16 md:py-24 bg-white" id="services">
-      <Container>
+    <section className="py-20 md:py-24 relative overflow-hidden" id="services">
+      {/* Premium Background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-[#FAF8F3] to-[#F5F1E8]" />
+      
+      {/* Subtle Wood Texture Pattern */}
+      <div className="absolute inset-0 opacity-[0.03]" 
+        style={{
+          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23D5B054' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+        }}
+      />
+      
+      <Container className="relative z-10">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-10 md:mb-12">
-          <span className="inline-block text-primary font-semibold text-sm tracking-wider uppercase mb-3">Our Services</span>
+          <span className="inline-block text-primary font-semibold text-sm tracking-wider uppercase mb-3">
+            Our Services
+          </span>
           <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-secondary-900 mb-4">
-            Professional Kitchen & Flooring Services
+            Professional{" "}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-primary-dark">
+              Kitchen
+            </span>{" "}
+            &{" "}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-primary-dark">
+              Flooring
+            </span>{" "}
+            Services
           </h2>
           <p className="text-secondary-600 text-base md:text-lg max-w-2xl mx-auto">
             Expert installation and refurbishment services for kitchens and flooring across Milton Keynes and Buckinghamshire.
           </p>
         </div>
 
-        {/* Services Grid - 1 col mobile, 2 cols tablet/desktop */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 lg:gap-8 max-w-4xl mx-auto">
+        {/* Services Grid - Horizontal scroll on mobile */}
+        <div className="flex md:grid md:grid-cols-2 gap-4 md:gap-6 lg:gap-8 max-w-4xl mx-auto overflow-x-auto md:overflow-visible pb-4 md:pb-0 scrollbar-hide -mx-4 px-4 md:mx-0 md:px-0">
           {services.map((service, index) => (
             <ScrollReveal key={service.title} delay={index * 0.15}>
-              <Link href={service.href} className="block group">
-                <div className={`relative overflow-hidden rounded-2xl ${service.color || 'bg-gray-50'} border border-gray-100 p-5 md:p-6 lg:p-8 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 h-full`}>
+              <Link href={service.href} className="block group flex-shrink-0 w-[85vw] md:w-auto">
+                <div className={`relative overflow-hidden rounded-2xl bg-white border border-gray-100 p-5 md:p-6 lg:p-8 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 h-full group-hover:border-t-2 group-hover:border-t-primary`}>
                   {/* Decorative gradient overlay */}
                   <div className="absolute inset-0 bg-gradient-to-br from-white/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   
