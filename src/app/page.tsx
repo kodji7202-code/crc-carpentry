@@ -5,6 +5,8 @@ import Gallery from "@/components/sections/Gallery";
 import Testimonials from "@/components/sections/Testimonials";
 import CTA from "@/components/sections/CTA";
 import AreasWeServe from "@/components/sections/AreasWeServe";
+import BrandsMarquee from "@/components/sections/BrandsMarquee";
+import Footer from "@/components/layout/Footer";
 
 export default function Home() {
   return (
@@ -16,6 +18,8 @@ export default function Home() {
       <Testimonials />
       <CTA />
       <AreasWeServe />
+      <BrandsMarquee />
+      <Footer />
     </main>
   );
 }
