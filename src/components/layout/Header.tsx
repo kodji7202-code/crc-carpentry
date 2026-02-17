@@ -129,10 +129,10 @@ export default function Header() {
                   <Image
                     src={logoUrl}
                     alt="CRC Carpentry & Joinery"
-                    width={200}
-                    height={60}
+                    width={267}
+                    height={80}
                     className="h-auto"
-                    style={{ height: "60px", width: "auto" }}
+                    style={{ height: "80px", width: "auto" }}
                     unoptimized
                   />
                 </div>
@@ -223,10 +223,10 @@ export default function Header() {
                 <Image
                   src={logoUrl}
                   alt="CRC Carpentry & Joinery"
-                  width={180}
-                  height={45}
+                  width={240}
+                  height={60}
                   className="h-auto"
-                  style={{ height: "45px", width: "auto" }}
+                  style={{ height: "60px", width: "auto" }}
                   unoptimized
                 />
               </Link>
