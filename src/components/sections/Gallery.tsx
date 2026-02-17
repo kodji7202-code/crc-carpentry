@@ -38,7 +38,7 @@ const galleryItems = [
 
 export default function Gallery() {
   return (
-    <section className="py-16 md:py-24 relative overflow-hidden" id="projects">
+    <section className="py-16 relative overflow-hidden" id="projects">
       {/* Dramatic Background Gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-black via-[#2C1810] to-[#3A3A3A]" />
       
@@ -55,7 +55,7 @@ export default function Gallery() {
 
       <Container className="relative z-10">
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-12">
+        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-8">
           <div className="max-w-2xl">
             <span className="inline-block text-primary font-semibold text-sm tracking-wider uppercase mb-3">Our Portfolio</span>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">

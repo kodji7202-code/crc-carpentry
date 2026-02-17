@@ -44,7 +44,7 @@ export default function AreasWeServe() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="py-16 md:py-20 relative overflow-hidden" id="areas-we-serve">
+    <section ref={sectionRef} className="py-12 md:py-16 relative overflow-hidden" id="areas-we-serve">
       {/* Aerial City View Background with Blur and Dark Overlay */}
       <div className="absolute inset-0">
         {/* City/aerial background image */}
@@ -70,7 +70,7 @@ export default function AreasWeServe() {
 
       <Container className="relative z-10">
         {/* Section Header */}
-        <div className={`text-center max-w-3xl mx-auto mb-12 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+        <div className={`text-center max-w-3xl mx-auto mb-8 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
           <span className="inline-block text-primary font-medium text-sm mb-3 tracking-wider uppercase">Service Area</span>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
             Proudly Serving Milton Keynes & Surrounding Areas
@@ -96,7 +96,7 @@ export default function AreasWeServe() {
         </div>
 
         {/* Additional SEO Text */}
-        <div className={`mt-12 text-center transition-all duration-700 delay-300 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+        <div className={`mt-8 text-center transition-all duration-700 delay-300 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
           <p className="text-gray-400 max-w-2xl mx-auto">
             Based in Milton Keynes, we travel throughout Bedfordshire and Buckinghamshire to bring 
             our expert carpentry services to customers in areas including <strong className="text-[#D4AF37]">Leighton Buzzard</strong>,{" "}

@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/Button";
 
 export default function Hero() {
   return (
-    <section id="hero" className="relative min-h-[90vh] lg:min-h-screen flex items-center overflow-hidden">
+    <section id="hero" className="relative min-h-[85vh] lg:min-h-[90vh] flex items-center overflow-hidden">
       {/* Background Image with Overlay */}
       <div className="absolute inset-0">
         {/* Placeholder for background image - replace with actual image */}
@@ -20,7 +20,7 @@ export default function Hero() {
       </div>
 
       <Container>
-        <div className="relative z-10 pt-20 pb-16 lg:py-0">
+        <div className="relative z-10 pt-16 pb-12 lg:py-0">
           {/* Main Content */}
           <div className="max-w-3xl">
             {/* Badge */}

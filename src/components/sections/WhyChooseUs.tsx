@@ -96,7 +96,7 @@ export default function WhyChooseUs() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="py-20 md:py-24 relative overflow-hidden" id="about">
+    <section ref={sectionRef} className="py-16 md:py-20 relative overflow-hidden" id="about">
       {/* Premium Background - Woodworking image with heavy blur and overlay */}
       <div className="absolute inset-0">
         {/* Woodworking background image */}
@@ -122,7 +122,7 @@ export default function WhyChooseUs() {
       
       <Container className="relative z-10">
         {/* Section Header */}
-        <div className={`text-center max-w-3xl mx-auto mb-16 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+        <div className={`text-center max-w-3xl mx-auto mb-12 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
           <span className="inline-block text-primary font-medium text-sm tracking-wider uppercase mb-3">Why Choose Us</span>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
             The CRC Difference
@@ -134,7 +134,7 @@ export default function WhyChooseUs() {
         </div>
 
         {/* Stats Bar - Premium Dark with Gold Accents */}
-        <div className={`flex flex-wrap justify-center items-center gap-8 md:gap-16 mb-16 transition-all duration-700 delay-200 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+        <div className={`flex flex-wrap justify-center items-center gap-8 md:gap-16 mb-12 transition-all duration-700 delay-200 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
           {stats.map((stat, index) => (
             <div key={stat.label} className="flex items-center gap-4">
               {/* Gold icon with shimmer/glow effect */}

@@ -55,7 +55,7 @@ const services = [
 
 export default function Services() {
   return (
-    <section className="py-20 md:py-24 relative overflow-hidden" id="services">
+    <section className="py-16 md:py-20 relative overflow-hidden" id="services">
       {/* Dramatic Premium Background - Option 2: Gradient Sophisticated */}
       <div className="absolute inset-0 bg-gradient-to-br from-[#1a1a1a] via-[#2C2C2C] to-[#1a1a1a]" />
       
@@ -70,11 +70,11 @@ export default function Services() {
       <div className="absolute inset-0 bg-gradient-radial from-[#3E2723]/30 via-transparent to-transparent" />
       
       {/* Bottom fade */}
-      <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-[#0a0a0a] to-transparent" />
+      <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-[#0a0a0a] to-transparent" />
       
       <Container className="relative z-10">
         {/* Section Header - Light colors for contrast */}
-        <div className="text-center max-w-3xl mx-auto mb-10 md:mb-12">
+        <div className="text-center max-w-3xl mx-auto mb-8 md:mb-10">
           <span className="inline-block text-primary font-semibold text-sm tracking-[0.2em] uppercase mb-3">
             Our Services
           </span>

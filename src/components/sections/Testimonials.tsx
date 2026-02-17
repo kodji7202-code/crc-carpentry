@@ -170,7 +170,7 @@ export default function Testimonials() {
       : currentTestimonial.content.slice(0, MAX_CHARS) + "...";
 
   return (
-    <section id="testimonials" className="py-16 md:py-24 relative overflow-hidden">
+    <section id="testimonials" className="py-16 relative overflow-hidden">
       {/* Premium Wood Background with Heavy Blur and Gold Overlay */}
       <div className="absolute inset-0">
         {/* Wood texture background */}
@@ -198,7 +198,7 @@ export default function Testimonials() {
 
       <Container className="relative z-10">
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-12">
+        <div className="text-center max-w-3xl mx-auto mb-8">
           <span className="inline-block text-primary font-medium text-sm mb-3 tracking-wider uppercase">
             Testimonials
           </span>
